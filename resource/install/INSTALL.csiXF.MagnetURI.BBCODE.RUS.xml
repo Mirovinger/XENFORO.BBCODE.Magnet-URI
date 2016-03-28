@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<addon addon_id="csiXF_bbCode_BBA5EACD" title="(CSI/XF/BBCODE) Magnet URI" version_string="1.0.0" version_id="1" url="http://cyberspace.industries/" install_callback_class="" install_callback_method="" uninstall_callback_class="" uninstall_callback_method="">
+  <admin_navigation/>
+  <admin_permissions/>
+  <admin_style_properties/>
+  <admin_templates/>
+  <admin_template_modifications/>
+  <code_events/>
+  <code_event_listeners/>
+  <cron/>
+  <email_templates/>
+  <email_template_modifications/>
+  <optiongroups>
+    <group group_id="csiXF_bbCode_BBA5EACD" display_order="99999999" debug_only="0"/>
+    <option option_id="csiXF_bbCode_BBA5EACD_icon" edit_format="textbox" data_type="string" can_backup="1">
+      <default_value><![CDATA[fa-magnet]]></default_value>
+      <edit_format_params></edit_format_params>
+      <sub_options></sub_options>
+      <relation group_id="csiXF_bbCode_BBA5EACD" display_order="1"/>
+    </option>
+    <option option_id="csiXF_bbCode_BBA5EACD_title" edit_format="textbox" data_type="string" can_backup="1">
+      <default_value><![CDATA[Магнитная ссылка]]></default_value>
+      <edit_format_params></edit_format_params>
+      <sub_options></sub_options>
+      <relation group_id="csiXF_bbCode_BBA5EACD" display_order="2"/>
+    </option>
+  </optiongroups>
+  <permissions>
+    <permission_groups/>
+    <permissions/>
+    <interface_groups/>
+  </permissions>
+  <phrases>
+    <phrase title="custom_bb_code_magnet_title" version_id="1" version_string="1.0.0"><![CDATA[Магнитная ссылка]]></phrase>
+    <phrase title="custom_bb_code_magnet_desc" version_id="1" version_string="1.0.0"><![CDATA[Магнитные ссылки предназначены преимущественно для указания на ресурсы, доступные к загрузке через пиринговые сети. Такие ссылки в основном идентифицируют файлы не по их расположению или имени, а по содержанию - вернее, по его хеш-коду.]]></phrase>
+    <phrase title="option_csiXF_bbCode_BBA5EACD_icon" version_id="1" version_string="1.0.0"><![CDATA[Иконка ссылки]]></phrase>
+    <phrase title="option_csiXF_bbCode_BBA5EACD_icon_explain" version_id="1" version_string="1.0.0"><![CDATA[Укажите иконку, которая будет отображаться перед названием магнитной ссылки.]]></phrase>
+    <phrase title="option_csiXF_bbCode_BBA5EACD_title" version_id="1" version_string="1.0.0"><![CDATA[Название ссылки]]></phrase>
+    <phrase title="option_csiXF_bbCode_BBA5EACD_title_explain" version_id="1" version_string="1.0.0"><![CDATA[Укажите стандартное название ссылки, которое будет отображаться при отсутствии пользовательского.]]></phrase>
+    <phrase title="option_group_csiXF_bbCode_BBA5EACD" version_id="1" version_string="1.0.0"><![CDATA[(CSI/XF/BBCODE) Магнитная ссылка]]></phrase>
+    <phrase title="option_group_csiXF_bbCode_BBA5EACD_description" version_id="1" version_string="1.0.0"><![CDATA[Магнитные ссылки предназначены преимущественно для указания на ресурсы, доступные к загрузке через пиринговые сети.
+<br/>Разработано в <a title="Создание стилей и дополнений для XenForo" class="csiXF_crGlobal csiXF_crAdmin csiXF_crOptions Tooltip" href="http://cyberspace.industries/">&quot;CYBERSPACE.Industries&quot;</a>.]]></phrase>
+  </phrases>
+  <route_prefixes/>
+  <style_properties/>
+  <templates>
+    <template title="csiXF_bbCode_BBA5EACD_tag_magnet" version_id="1" version_string="1.0.0"><![CDATA[<xen:require css="csiXF_bbCode_BBA5EACD.css" />
+<a class="csiXF_bbCode_BBA5EACD bbCodeMagnetUri externalLink" href="{xen:raw $content}" rel="nofollow">
+  {xen:if $xenOptions.csiXF_bbCode_BBA5EACD_icon, '<i class="fa {$xenOptions.csiXF_bbCode_BBA5EACD_icon}"></i>'}
+  {xen:if $option, '{xen:raw $option}', '{$xenOptions.csiXF_bbCode_BBA5EACD_title}'}
+</a>]]></template>
+    <template title="csiXF_bbCode_BBA5EACD.css" version_id="1" version_string="1.0.0"><![CDATA[]]></template>
+  </templates>
+  <public_template_modifications/>
+  <bb_code_media_sites/>
+  <bb_codes>
+    <bb_code bb_code_id="magnet" bb_code_mode="callback" has_option="optional" callback_class="CSI\BbCodeMagnetURI\BbCode\Formatter\Base" callback_method="getBbCodeMagnetURI" option_regex="" trim_lines_after="0" plain_children="1" disable_smilies="1" disable_nl2br="1" disable_autolink="1" allow_empty="0" allow_signature="0" editor_icon_url="" sprite_mode="0" sprite_params_x="" sprite_params_y="" active="1">
+      <replace_html><![CDATA[]]></replace_html>
+      <replace_html_email><![CDATA[]]></replace_html_email>
+      <replace_text><![CDATA[]]></replace_text>
+      <example><![CDATA[[MAGNET]magnet:?xt=urn:btih:c12fe1c06bba254a9dc9f519b335aa7c1367a88a&dn[/MAGNET]
+[MAGNET=Ссылка для скачивания]magnet:?xt=urn:btih:c12fe1c06bba254a9dc9f519b335aa7c1367a88a&dn[/MAGNET]]]></example>
+    </bb_code>
+  </bb_codes>
+</addon>
